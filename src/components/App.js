@@ -1,18 +1,20 @@
 import video from "../data/video.js";
+import VideoStats from "./VideoStats"
+import Video from "./Video"
 
 function App() {
-  console.log("Here's your data:", video);
-
+  
   return (
     <div className="App">
-      <iframe
-        width="919"
-        height="525"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        frameBorder="0"
-        allowFullScreen
-        title="Thinking in React"
-      />
+     <Video url={video.embedUrl} />
+     <VideoStats
+     title={video.title}
+     views={video.views}
+     created={video.createdAt}
+     upvotes={video.upvotes}
+     downvotes={video.downvotes}
+     comments={video.comments}
+     />
     </div>
   );
 }
